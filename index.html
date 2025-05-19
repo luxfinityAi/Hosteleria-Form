@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Formulario Hostelería - LuxfinityAI</title>
   <style>
     body {
@@ -12,10 +12,33 @@
       margin: 0;
       padding: 2rem;
     }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo img {
+      max-width: 220px;
+      height: auto;
+    }
+
     h1 {
       color: #CBA135;
       text-align: center;
     }
+
+    .descripcion {
+      max-width: 700px;
+      margin: 1rem auto 2rem auto;
+      background-color: #1E1B3A;
+      padding: 1.5rem;
+      border-radius: 15px;
+      color: #DDD;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
     form {
       max-width: 700px;
       margin: 0 auto;
@@ -24,12 +47,14 @@
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(203, 161, 53, 0.4);
     }
+
     label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
       color: #A188F2;
     }
+
     input, textarea, select {
       width: 100%;
       padding: 0.8rem;
@@ -39,6 +64,24 @@
       background-color: #2A2549;
       color: white;
     }
+
+    input[type="checkbox"], input[type="radio"] {
+      width: auto;
+      margin-right: 0.5rem;
+    }
+
+    .form-section {
+      margin-bottom: 2rem;
+    }
+
+    .cta-final {
+      text-align: center;
+      color: #CBA135;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
     button {
       background-color: #CBA135;
       color: black;
@@ -47,81 +90,102 @@
       border: none;
       border-radius: 15px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #f0c75e;
     }
   </style>
 </head>
 <body>
+
+  <div class="logo">
+    <img src="https://luxfinityai.github.io/Hosteleria-Form/assets/luxfinityai-logo.png" alt="LuxfinityAI Logo">
+  </div>
+
   <h1>¿Te gustaría automatizar tu restaurante o bar?</h1>
-  <form id="hosteleriaForm">
-    <label>Nombre completo</label>
-    <input type="text" name="nombre" required />
 
-    <label>Email de contacto</label>
-    <input type="email" name="email" required />
+  <div class="descripcion">
+    📌 <strong>En menos de 2 minutos</strong> descubrirás si tu negocio puede beneficiarse de automatizaciones con inteligencia artificial.<br><br>
+    Trabajamos con <strong>restaurantes, bares, pubs y discotecas</strong> que quieren vender más, gastar menos y ofrecer una experiencia inolvidable al cliente.<br><br>
+    🚀 <strong>Completa este formulario</strong> y un asesor de <strong>LuxfinityAI</strong> te contactará con una propuesta personalizada.
+  </div>
 
-    <label>Número de teléfono</label>
-    <input type="tel" name="telefono" required />
+  <form action="https://hook.eu2.make.com/59bt6k5uapa8d78777kvt6cz7je9ydvo" method="POST">
+    <div class="form-section">
+      <label>Nombre completo</label>
+      <input type="text" name="nombre" required>
+    </div>
 
-    <label>Nombre del negocio</label>
-    <input type="text" name="negocio" required />
+    <div class="form-section">
+      <label>Email de contacto</label>
+      <input type="email" name="email" required>
+    </div>
 
-    <label>Categoría</label>
-    <select name="categoria" required>
-      <option value="Restaurante">Restaurante</option>
-      <option value="Bar">Bar</option>
-      <option value="Pub">Pub</option>
-      <option value="Discoteca">Discoteca</option>
-      <option value="Otro">Otro</option>
-    </select>
+    <div class="form-section">
+      <label>Número de teléfono</label>
+      <input type="tel" name="telefono" required>
+    </div>
 
-    <label>Ciudad</label>
-    <input type="text" name="ciudad" required />
+    <div class="form-section">
+      <label>¿Cuál es el nombre de tu negocio?</label>
+      <input type="text" name="nombre_negocio" required>
+    </div>
 
-    <label>Personas que trabajan</label>
-    <select name="trabajadores" required>
-      <option>1 a 3</option>
-      <option>4 a 6</option>
-      <option>7 a 10</option>
-      <option>Más de 10</option>
-    </select>
+    <div class="form-section">
+      <label>¿A qué categoría pertenece tu negocio?</label>
+      <label><input type="checkbox" name="categoria" value="Restaurante"> Restaurante</label>
+      <label><input type="checkbox" name="categoria" value="Bar"> Bar</label>
+      <label><input type="checkbox" name="categoria" value="Pub"> Pub</label>
+      <label><input type="checkbox" name="categoria" value="Discoteca"> Discoteca</label>
+      <label><input type="checkbox" name="categoria" value="Otro"> Otro</label>
+    </div>
 
-    <label>¿Usas algún sistema digital?</label>
-    <select name="sistema">
-      <option value="No, todo manual">No, todo manual</option>
-      <option value="Sí, Excel o Google Sheets">Sí, Excel o Google Sheets</option>
-      <option value="Software específico">Software específico</option>
-    </select>
+    <div class="form-section">
+      <label>¿En qué ciudad estás ubicado?</label>
+      <input type="text" name="ciudad" required>
+    </div>
 
-    <label>¿Qué resultado esperas lograr?</label>
-    <input type="text" name="resultado" />
+    <div class="form-section">
+      <label>¿Cuántas personas trabajan actualmente en tu negocio?</label>
+      <label><input type="radio" name="personal" value="1 a 3"> 1 a 3</label>
+      <label><input type="radio" name="personal" value="4 a 6"> 4 a 6</label>
+      <label><input type="radio" name="personal" value="7 a 10"> 7 a 10</label>
+      <label><input type="radio" name="personal" value="Más de 10"> Más de 10</label>
+    </div>
 
-    <label>¿Qué tan urgente es?</label>
-    <select name="urgencia">
-      <option>Estoy evaluando opciones</option>
-      <option>Lo necesito ya</option>
-    </select>
+    <div class="form-section">
+      <label>¿Usas algún sistema digital para gestionar tu negocio?</label>
+      <label><input type="checkbox" name="sistema" value="No uso nada"> No uso nada</label>
+      <label><input type="checkbox" name="sistema" value="Excel o Google Sheets"> Excel o Google Sheets</label>
+      <label><input type="checkbox" name="sistema" value="Software específico"> Software específico</label>
+    </div>
 
-    <button type="submit">Enviar</button>
+    <div class="form-section">
+      <label>¿Qué resultados esperas lograr con esta automatización?</label>
+      <textarea name="resultados" rows="3" placeholder="Ej: Vender más, ahorrar tiempo, mejorar atención..."></textarea>
+    </div>
+
+    <div class="form-section">
+      <label>¿Qué tan urgente es para ti implementar esta solución?</label>
+      <select name="urgencia">
+        <option value="No lo sé">No lo sé</option>
+        <option value="Lo antes posible">Lo antes posible</option>
+        <option value="En 1-2 meses">En 1-2 meses</option>
+        <option value="Sólo estoy explorando">Sólo estoy explorando</option>
+      </select>
+    </div>
+
+    <div class="cta-final">
+      🎯 ¡Da el primer paso hacia un negocio más inteligente!<br>
+      👉 Nuestro equipo analizará tu caso y te enviará una propuesta exclusiva.
+    </div>
+
+    <div style="text-align:center;">
+      <button type="submit">Enviar</button>
+    </div>
   </form>
 
-  <script>
-    document.getElementById("hosteleriaForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(e.target).entries());
-
-      const response = await fetch("https://hook.eu2.make.com/59bt6k5uapa8d78777kvt6cz7je9ydvo", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        alert("Formulario enviado correctamente. ¡Gracias!");
-        e.target.reset();
-      } else {
-        alert("Hubo un error al enviar el formulario.");
-      }
-    });
-  </script>
 </body>
 </html>
